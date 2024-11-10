@@ -27,6 +27,7 @@ public class AadhaarEntity {
   public void setName(String name) {
     if (verification()) {
       this.name = name;
+      System.out.println("Name Updated Successfully!");
     }
 
   }
@@ -38,6 +39,7 @@ public class AadhaarEntity {
   public void setContact(int contact) {
     if (verification()) {
       this.contact = contact;
+      System.out.println("Contact Updated Successfully!");
     }
 
   }
@@ -49,6 +51,7 @@ public class AadhaarEntity {
   public void setAddress(String address) {
     if (verification()) {
       this.address = address;
+      System.out.println("Address Updated Successfully!");
 
     }
 
@@ -62,11 +65,10 @@ public class AadhaarEntity {
 
     int registeredContact = sc.nextInt();
     if (contact == registeredContact) {
-      System.out.println("Login successful");
 
-      int generatedOtp = (int) Math.random() * 9999 + 9999;
+      int generatedOtp = 100000 + (int) (Math.random() * 999999);
 
-      System.out.print("OTP is");
+      System.out.print("OTP is ");
 
       try {
         Thread.sleep(3000);
@@ -76,10 +78,12 @@ public class AadhaarEntity {
       }
 
       System.out.println(generatedOtp);
-      System.out.print("Enter the OTP");
+      System.out.print("Enter the OTP ");
       int enteredOtpByUser = sc.nextInt();
+
       System.out.println(enteredOtpByUser);
       if (generatedOtp == enteredOtpByUser) {
+        System.out.println("Login successful");
         return true;
       } else {
         System.out.println("Wrong OTP");
